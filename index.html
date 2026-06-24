@@ -413,17 +413,51 @@
       .area-grid { grid-template-columns: repeat(3, 1fr); }
       .reviews-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
+      .blog-teaser-grid { grid-template-columns: 1fr 1fr !important; }
     }
     @media (max-width: 768px) {
+      /* Nav */
       .nav-links { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--dark); border-bottom: 1px solid var(--border); padding: 1rem 5%; z-index: 999; }
       .nav-links.open { display: flex; }
       .nav-links li a { padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: block; }
       .hamburger { display: flex; }
       .mobile-call { display: block; }
-      body { padding-bottom: 60px; }
-      .steps { grid-template-columns: 1fr; }
+      body { padding-bottom: 68px; }
+
+      /* Hero */
+      .hero { min-height: auto; padding: 3.5rem 5% 3rem; }
+
+      /* Sections — reduce vertical padding on mobile */
+      section { padding: 3rem 5%; }
+
+      /* Steps */
+      .steps { grid-template-columns: 1fr; gap: 1.5rem; }
+
+      /* Forms — prevent iOS zoom (font must be 16px+) */
+      .form-group input, .form-group select, .form-group textarea,
+      .quote-form-card input, .quote-form-card select { font-size: 16px; }
       .form-row { grid-template-columns: 1fr; }
+      .quote-form-card .form-row { grid-template-columns: 1fr; }
+
+      /* Service area */
       .area-grid { grid-template-columns: repeat(2, 1fr); }
+
+      /* Blog teaser */
+      .blog-teaser-grid { grid-template-columns: 1fr !important; }
+
+      /* Footer */
+      .footer-top { flex-direction: column; gap: 1.5rem; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 0.5rem; }
+
+      /* Out of area callout */
+      .out-of-area-callout { flex-direction: column; text-align: center; }
+      .out-of-area-callout a { width: 100%; text-align: center; }
+
+      /* Pricing */
+      .pricing-grid { max-width: 100%; }
+
+      /* CTA band */
+      .cta-band { padding: 3rem 5%; }
     }
   </style>
 </head>
@@ -743,7 +777,7 @@
     </div>
 
     <!-- OUT OF AREA CALLOUT -->
-    <div style="margin-top:2.5rem;background:linear-gradient(135deg,rgba(46,125,82,0.12) 0%,rgba(46,125,82,0.04) 100%);border:1px solid var(--green);border-radius:14px;padding:2rem 2.25rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+    <div class="out-of-area-callout" style="margin-top:2.5rem;background:linear-gradient(135deg,rgba(46,125,82,0.12) 0%,rgba(46,125,82,0.04) 100%);border:1px solid var(--green);border-radius:14px;padding:2rem 2.25rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
       <div style="font-size:2rem;flex-shrink:0;">📍</div>
       <div style="flex:1;min-width:240px;">
         <div style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--white);margin-bottom:0.4rem;">Not in a Listed City? We Can Still Deliver.</div>
@@ -933,7 +967,7 @@
       <h2 class="section-title">From Our Blog</h2>
       <p class="section-sub">Free advice to make your Inland Empire move smoother, faster, and less stressful.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;">
+    <div class="blog-teaser-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;">
       <a href="blog-how-many-totes-do-i-need.html" style="text-decoration:none;">
         <div class="tote-card" style="flex-direction:column;align-items:flex-start;gap:0.75rem;height:100%;">
           <div style="font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green-light);">Packing Guide</div>
