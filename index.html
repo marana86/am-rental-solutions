@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -165,16 +165,16 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --green: #2e7d52;
-      --green-light: #3da06a;
-      --green-bright: #4ade80;
-      --dark: #050e07;
-      --dark-mid: #091410;
-      --dark-card: #0d1a11;
-      --border: rgba(46,125,82,0.25);
+      --green: #2563eb;
+      --green-light: #3b82f6;
+      --green-bright: #60a5fa;
+      --dark: #050711;
+      --dark-mid: #080b18;
+      --dark-card: #0c1022;
+      --border: rgba(37,99,235,0.3);
       --white: #ffffff;
-      --text: #d4e6d9;
-      --muted: rgba(212,230,217,0.5);
+      --text: #e2e8f0;
+      --muted: rgba(226,232,240,0.5);
       --radius: 8px;
       --transition: 0.25s ease;
     }
@@ -206,12 +206,12 @@
     /* ── HERO ── */
     .hero {
       min-height: 92vh; display: flex; align-items: center;
-      background: radial-gradient(ellipse at 60% 50%, rgba(46,125,82,0.18) 0%, transparent 65%),
-                  linear-gradient(160deg, #0a0f0c 0%, #0d1810 50%, #0a0f0c 100%);
+      background: radial-gradient(ellipse at 60% 50%, rgba(37,99,235,0.18) 0%, transparent 65%),
+                  linear-gradient(160deg, #0a0f0c 0%, #080d1f 50%, #0a0f0c 100%);
       padding: 6rem 5% 5rem;
     }
     .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(46,125,82,0.15); border: 1px solid var(--border); border-radius: 50px; padding: 0.35rem 0.9rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 1.5rem; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(37,99,235,0.15); border: 1px solid var(--border); border-radius: 50px; padding: 0.35rem 0.9rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 1.5rem; }
     .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--green-bright); border-radius: 50%; }
     .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.75rem, 3.2vw, 2.75rem); font-weight: 800; color: var(--white); line-height: 1.15; margin-bottom: 1.25rem; }
     .hero h1 span { color: var(--green-bright); }
@@ -229,7 +229,7 @@
       transition: border-color var(--transition);
     }
     .tote-card:hover { border-color: var(--green-light); }
-    .tote-icon { width: 52px; height: 52px; background: rgba(46,125,82,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
+    .tote-icon { width: 52px; height: 52px; background: rgba(37,99,235,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
     .tote-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
     .tote-card p { font-size: 0.8rem; color: var(--muted); }
 
@@ -257,7 +257,7 @@
     .quote-left h3 { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--white); margin-bottom: 0.75rem; line-height: 1.2; }
     .quote-left p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.75rem; }
     .quote-perk { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem; font-size: 0.88rem; color: var(--text); }
-    .quote-perk-icon { width: 34px; height: 34px; background: rgba(46,125,82,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
+    .quote-perk-icon { width: 34px; height: 34px; background: rgba(37,99,235,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
     .quote-form-card { background: var(--dark-card); border: 1px solid var(--green); border-radius: 14px; padding: 2rem; }
     .quote-form-card .form-title { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--white); margin-bottom: 0.25rem; }
     .quote-form-card .form-subtitle { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.5rem; }
@@ -265,7 +265,7 @@
     .quote-form-card .form-group { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.85rem; }
     .quote-form-card label { font-size: 0.7rem; font-weight: 700; color: var(--muted); letter-spacing: 0.5px; text-transform: uppercase; }
     .quote-form-card input, .quote-form-card select {
-      background: #0a0f0c; border: 1.5px solid var(--border); border-radius: var(--radius);
+      background: #050711; border: 1.5px solid var(--border); border-radius: var(--radius);
       padding: 0.7rem 0.9rem; color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.86rem;
       outline: none; transition: border-color var(--transition); width: 100%;
     }
@@ -290,7 +290,7 @@
     .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3.5rem; }
     .compare-col { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
     .compare-head { padding: 1.25rem 1.5rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-    .compare-head.good { background: rgba(46,125,82,0.2); color: var(--green-bright); border-bottom: 1px solid var(--border); }
+    .compare-head.good { background: rgba(37,99,235,0.2); color: var(--green-bright); border-bottom: 1px solid var(--border); }
     .compare-head.bad { background: rgba(255,50,50,0.08); color: rgba(255,120,120,0.8); border-bottom: 1px solid rgba(255,50,50,0.15); }
     .compare-col.bad-col { border-color: rgba(255,50,50,0.15); }
     .compare-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.9rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.85rem; color: var(--text); }
@@ -349,19 +349,19 @@
     .faq-item.open .faq-a { display: block; }
 
     /* ── CONTACT ── */
-    #contact { background: radial-gradient(ellipse at 40% 60%, rgba(46,125,82,0.12) 0%, transparent 65%); }
+    #contact { background: radial-gradient(ellipse at 40% 60%, rgba(37,99,235,0.12) 0%, transparent 65%); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3.5rem; align-items: start; }
     .contact-info h3 { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 0.75rem; }
     .contact-info p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; margin-bottom: 2rem; }
     .contact-detail { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem; font-size: 0.88rem; color: var(--text); }
-    .contact-detail .cd-icon { width: 38px; height: 38px; background: rgba(46,125,82,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .contact-detail .cd-icon { width: 38px; height: 38px; background: rgba(37,99,235,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
 
     .contact-form { background: var(--dark-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
     .form-group label { font-size: 0.75rem; font-weight: 600; color: var(--muted); letter-spacing: 0.5px; text-transform: uppercase; }
     .form-group input, .form-group select, .form-group textarea {
-      background: #0a0f0c; border: 1.5px solid var(--border); border-radius: var(--radius);
+      background: #050711; border: 1.5px solid var(--border); border-radius: var(--radius);
       padding: 0.75rem 1rem; color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.88rem;
       outline: none; transition: border-color var(--transition); width: 100%;
     }
@@ -374,7 +374,7 @@
 
     /* ── CTA BAND ── */
     .cta-band {
-      background: linear-gradient(135deg, rgba(46,125,82,0.25) 0%, rgba(10,15,12,0) 60%);
+      background: linear-gradient(135deg, rgba(37,99,235,0.25) 0%, rgba(10,15,12,0) 60%);
       border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
       padding: 4.5rem 5%; text-align: center;
     }
@@ -593,7 +593,7 @@
             <label>Delivery City</label>
             <input type="text" name="Delivery City" placeholder="Rancho Cucamonga" />
           </div>
-          <label style="display:flex;align-items:flex-start;gap:0.65rem;cursor:pointer;margin-bottom:1rem;padding:0.9rem 1rem;background:rgba(46,125,82,0.08);border:1px solid var(--border);border-radius:var(--radius);">
+          <label style="display:flex;align-items:flex-start;gap:0.65rem;cursor:pointer;margin-bottom:1rem;padding:0.9rem 1rem;background:rgba(37,99,235,0.08);border:1px solid var(--border);border-radius:var(--radius);">
             <input type="checkbox" name="Extended Delivery" value="Yes — outside standard service area" style="margin-top:2px;accent-color:var(--green);width:16px;height:16px;flex-shrink:0;" />
             <span style="font-size:0.82rem;color:var(--text);line-height:1.5;">
               <strong style="color:var(--white);">My city isn't listed above</strong> — I'm outside the standard service area and would like a custom delivery quote.
@@ -777,7 +777,7 @@
     </div>
 
     <!-- OUT OF AREA CALLOUT -->
-    <div class="out-of-area-callout" style="margin-top:2.5rem;background:linear-gradient(135deg,rgba(46,125,82,0.12) 0%,rgba(46,125,82,0.04) 100%);border:1px solid var(--green);border-radius:14px;padding:2rem 2.25rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+    <div class="out-of-area-callout" style="margin-top:2.5rem;background:linear-gradient(135deg,rgba(37,99,235,0.12) 0%,rgba(37,99,235,0.04) 100%);border:1px solid var(--green);border-radius:14px;padding:2rem 2.25rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
       <div style="font-size:2rem;flex-shrink:0;">📍</div>
       <div style="flex:1;min-width:240px;">
         <div style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--white);margin-bottom:0.4rem;">Not in a Listed City? We Can Still Deliver.</div>
@@ -942,7 +942,7 @@
             <label>Pickup City / Delivery Address</label>
             <input type="text" name="Delivery Address" placeholder="123 Main St, Rancho Cucamonga" />
           </div>
-          <label style="display:flex;align-items:flex-start;gap:0.65rem;cursor:pointer;margin-bottom:1rem;padding:0.9rem 1rem;background:rgba(46,125,82,0.08);border:1px solid var(--border);border-radius:var(--radius);">
+          <label style="display:flex;align-items:flex-start;gap:0.65rem;cursor:pointer;margin-bottom:1rem;padding:0.9rem 1rem;background:rgba(37,99,235,0.08);border:1px solid var(--border);border-radius:var(--radius);">
             <input type="checkbox" name="Extended Delivery" value="Yes — outside standard service area" style="margin-top:2px;accent-color:#2e7d52;width:16px;height:16px;flex-shrink:0;" />
             <span style="font-size:0.82rem;color:#d4e6d9;line-height:1.5;">
               <strong style="color:#ffffff;">My city isn't in the standard service area</strong> — I'd like a custom delivery quote for my location.
@@ -1137,3 +1137,4 @@
 
 </body>
 </html>
+
