@@ -184,45 +184,54 @@
     /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 1000;
-      background: rgba(10,15,12,0.96); backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(0,0,0,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
     .nav-inner {
       max-width: 1200px; margin: 0 auto; padding: 0 5%;
-      display: flex; align-items: center; justify-content: space-between; height: 68px;
+      display: flex; align-items: center; justify-content: space-between; height: 72px;
     }
-    .nav-logo { text-decoration: none; }
-    .nav-logo .logo-am { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--white); }
-    .nav-logo .logo-sub { display: block; font-size: 0.6rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green-light); margin-top: -2px; }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .logo-mark {
+      background: #fff; color: #000;
+      font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.15rem;
+      padding: 7px 11px; border-radius: 6px; letter-spacing: -0.5px; line-height: 1;
+    }
+    .logo-text-stack { display: flex; flex-direction: column; line-height: 1; gap: 2px; }
+    .logo-rental { font-size: 0.6rem; font-weight: 700; letter-spacing: 3px; color: #2563eb; text-transform: uppercase; }
+    .logo-solutions { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; color: #fff; text-transform: uppercase; }
     .nav-right { display: flex; align-items: center; gap: 1.5rem; }
     .nav-links { display: flex; list-style: none; gap: 0; }
-    .nav-links a { display: block; padding: 0.5rem 0.85rem; font-size: 0.82rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color var(--transition); }
-    .nav-links a:hover { color: var(--white); }
-    .nav-cta { background: var(--green); color: var(--white) !important; padding: 0.5rem 1.1rem !important; border-radius: var(--radius); font-weight: 700 !important; transition: background var(--transition) !important; }
-    .nav-cta:hover { background: var(--green-light) !important; }
+    .nav-links a { display: block; padding: 0.5rem 0.9rem; font-size: 0.84rem; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; transition: color var(--transition); }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: #2563eb; color: #fff !important; padding: 0.6rem 1.25rem !important; border-radius: 8px; font-weight: 700 !important; font-size: 0.85rem !important; transition: background var(--transition) !important; }
+    .nav-cta:hover { background: #3b82f6 !important; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
 
     /* ── HERO ── */
-    .hero {
-      min-height: 92vh; display: flex; align-items: center;
-      background: radial-gradient(ellipse at 60% 50%, rgba(37,99,235,0.18) 0%, transparent 65%),
-                  linear-gradient(160deg, #0a0f0c 0%, #080d1f 50%, #0a0f0c 100%);
-      padding: 6rem 5% 5rem;
+    .hero { background: #000; padding: 5rem 5% 4rem; }
+    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .hero-tag {
+      display: inline-block; border: 1px solid rgba(37,99,235,0.5); color: #60a5fa;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+      padding: 0.45rem 1rem; border-radius: 999px; margin-bottom: 1.5rem;
     }
-    .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(37,99,235,0.15); border: 1px solid var(--border); border-radius: 50px; padding: 0.35rem 0.9rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green-bright); margin-bottom: 1.5rem; }
-    .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--green-bright); border-radius: 50%; }
-    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.75rem, 3.2vw, 2.75rem); font-weight: 800; color: var(--white); line-height: 1.15; margin-bottom: 1.25rem; }
-    .hero h1 span { color: var(--green-bright); }
-    .hero p { font-size: 0.92rem; color: var(--muted); max-width: 480px; margin-bottom: 2.25rem; line-height: 1.75; }
+    .hero h1 {
+      font-family: 'Syne', sans-serif; font-size: clamp(2.4rem, 5vw, 4.75rem);
+      font-weight: 800; line-height: 1.0; color: #fff; text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .hero h1 .blue-line { color: #2563eb; display: block; }
+    .hero-sub { font-size: 0.97rem; color: rgba(255,255,255,0.6); margin-bottom: 0.4rem; line-height: 1.65; }
+    .hero-emph { font-size: 0.97rem; color: #fff; font-weight: 700; margin-bottom: 2.25rem; }
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-green { display: inline-block; background: var(--green); color: var(--white); font-weight: 700; font-size: 0.9rem; padding: 0.9rem 1.8rem; border-radius: var(--radius); text-decoration: none; letter-spacing: 0.3px; transition: background var(--transition), transform var(--transition); }
-    .btn-green:hover { background: var(--green-light); transform: translateY(-2px); }
-    .btn-outline { display: inline-block; border: 1.5px solid var(--border); color: var(--text); font-weight: 600; font-size: 0.88rem; padding: 0.9rem 1.6rem; border-radius: var(--radius); text-decoration: none; transition: border-color var(--transition), color var(--transition); }
-    .btn-outline:hover { border-color: var(--green-light); color: var(--white); }
+    .btn-green { display: inline-flex; align-items: center; gap: 0.4rem; background: #2563eb; color: #fff; font-weight: 700; font-size: 0.9rem; padding: 0.9rem 1.75rem; border-radius: 8px; text-decoration: none; transition: background var(--transition), transform var(--transition); }
+    .btn-green:hover { background: #3b82f6; transform: translateY(-2px); }
+    .btn-outline { display: inline-block; border: 1.5px solid rgba(255,255,255,0.25); color: #fff; font-weight: 600; font-size: 0.88rem; padding: 0.9rem 1.6rem; border-radius: 8px; text-decoration: none; transition: border-color var(--transition), background var(--transition); }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
+    .tote-svg-wrap { width: 100%; max-width: 480px; }
 
-    .hero-visual { display: flex; flex-direction: column; gap: 1rem; }
     .tote-card {
       background: var(--dark-card); border: 1px solid var(--border); border-radius: 12px;
       padding: 1.5rem; display: flex; align-items: center; gap: 1.25rem;
@@ -233,14 +242,24 @@
     .tote-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
     .tote-card p { font-size: 0.8rem; color: var(--muted); }
 
-    /* ── TRUST STRIP ── */
-    .trust-strip {
-      background: var(--dark-mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-      padding: 1.25rem 5%;
+    /* ── FEATURE STRIP ── */
+    .feature-strip { background: #000; padding: 0 5% 3rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .feature-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden;
     }
-    .trust-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem; }
-    .trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; font-weight: 600; color: var(--text); }
-    .trust-item .ti { color: var(--green-bright); font-size: 1rem; }
+    .feature-item { padding: 2rem 1.5rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
+    .feature-item:last-child { border-right: none; }
+    .feature-icon { margin-bottom: 0.85rem; display: flex; justify-content: center; }
+    .feature-item h3 { font-size: 0.92rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+    .feature-item p { font-size: 0.78rem; color: rgba(255,255,255,0.42); line-height: 1.5; }
+    .stars-row {
+      max-width: 1200px; margin: 1.5rem auto 0;
+      display: flex; align-items: center; justify-content: center; gap: 0.65rem;
+      font-size: 0.82rem; color: rgba(255,255,255,0.42);
+    }
+    .stars-row .stars { color: #2563eb; font-size: 1.1rem; letter-spacing: 2px; }
 
     /* ── SECTIONS ── */
     section { padding: 5rem 5%; }
@@ -407,6 +426,10 @@
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
       .hero-visual { display: none; }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
+      .feature-item:nth-child(2) { border-right: none; }
+      .feature-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.08); }
+      .feature-item:nth-child(4) { border-right: none; border-top: 1px solid rgba(255,255,255,0.08); }
       .steps { grid-template-columns: repeat(2, 1fr); }
       .compare-grid { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
@@ -417,7 +440,12 @@
     }
     @media (max-width: 768px) {
       /* Nav */
-      .nav-links { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: var(--dark); border-bottom: 1px solid var(--border); padding: 1rem 5%; z-index: 999; }
+      .nav-links { display: none; flex-direction: column; position: fixed; top: 72px; left: 0; right: 0; background: #000; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1rem 5%; z-index: 999; }
+      .feature-grid { grid-template-columns: 1fr 1fr; }
+      .feature-item { border-top: 1px solid rgba(255,255,255,0.08); }
+      .feature-item:first-child, .feature-item:nth-child(2) { border-top: none; }
+      .feature-item:nth-child(2) { border-right: none; }
+      .feature-item:nth-child(4) { border-right: none; }
       .nav-links.open { display: flex; }
       .nav-links li a { padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: block; }
       .hamburger { display: flex; }
@@ -467,16 +495,19 @@
 <nav>
   <div class="nav-inner">
     <a href="#home" class="nav-logo">
-      <span class="logo-am">A&amp;M Rental Solutions</span>
-      <span class="logo-sub">Moving Tote Rentals &bull; Inland Empire</span>
+      <div class="logo-mark">AM</div>
+      <div class="logo-text-stack">
+        <span class="logo-rental">Rental</span>
+        <span class="logo-solutions">Solutions</span>
+      </div>
     </a>
     <div class="nav-right">
       <ul class="nav-links" id="navLinks">
         <li><a href="#how">How It Works</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#area">Service Area</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="#contact" class="nav-cta">Book Now</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">About Us</a></li>
+        <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
       </ul>
       <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -490,54 +521,127 @@
   <div class="hero-inner">
     <div class="hero-content">
       <div class="hero-tag">Inland Empire's Moving Tote Rental</div>
-      <h1>Moving Made Easy.<br /><span>Ditch the Boxes.</span></h1>
-      <p>Rent heavy-duty, reusable plastic totes delivered right to your door. No cardboard, no tape, no trips to the store — just pack and move.</p>
+      <h1>Moving Made Easy.<span class="blue-line">Ditch the Boxes.</span></h1>
+      <p class="hero-sub">Rent heavy-duty, reusable moving totes delivered to your door.</p>
+      <p class="hero-emph">No cardboard. No tape. No hassle.</p>
       <div class="hero-btns">
-        <a href="#contact" class="btn-green">Get a Free Quote</a>
+        <a href="#contact" class="btn-green">Get a Free Quote &nbsp;→</a>
         <a href="#how" class="btn-outline">See How It Works</a>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="tote-card">
-        <div class="tote-icon">📦</div>
-        <div>
-          <h3>Heavy-Duty Totes</h3>
-          <p>Stackable, weatherproof, and hold up to 60 lbs each</p>
-        </div>
-      </div>
-      <div class="tote-card">
-        <div class="tote-icon">🚚</div>
-        <div>
-          <h3>Free Delivery & Pickup</h3>
-          <p>We drop off and pick up — no extra fees</p>
-        </div>
-      </div>
-      <div class="tote-card">
-        <div class="tote-icon">🛒</div>
-        <div>
-          <h3>Moving Dolly Included</h3>
-          <p>Every package comes with a dolly — no extra charge</p>
-        </div>
-      </div>
-      <div class="tote-card">
-        <div class="tote-icon">🌱</div>
-        <div>
-          <h3>100% Eco-Friendly</h3>
-          <p>Reusable totes that keep cardboard out of landfills</p>
-        </div>
+      <div class="tote-svg-wrap">
+        <svg viewBox="0 0 480 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <defs>
+            <radialGradient id="atmosGlow" cx="50%" cy="65%" r="52%">
+              <stop offset="0%" stop-color="#1e40af" stop-opacity="0.5"/>
+              <stop offset="60%" stop-color="#1e3a8a" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="toteBody" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1c1f30"/>
+              <stop offset="100%" stop-color="#0c0e18"/>
+            </linearGradient>
+            <linearGradient id="lidGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#3b82f6"/>
+              <stop offset="100%" stop-color="#1d4ed8"/>
+            </linearGradient>
+          </defs>
+          <!-- Atmospheric glow -->
+          <ellipse cx="240" cy="400" rx="220" ry="210" fill="url(#atmosGlow)"/>
+          <!-- TOTE 1 (top) -->
+          <rect x="70" y="38" width="340" height="14" rx="4" fill="url(#lidGrad)"/>
+          <rect x="75" y="52" width="330" height="118" rx="2" fill="url(#toteBody)"/>
+          <line x1="140" y1="55" x2="140" y2="166" stroke="#22263a" stroke-width="1.5"/>
+          <line x1="215" y1="55" x2="215" y2="166" stroke="#22263a" stroke-width="1.5"/>
+          <line x1="265" y1="55" x2="265" y2="166" stroke="#22263a" stroke-width="1.5"/>
+          <line x1="340" y1="55" x2="340" y2="166" stroke="#22263a" stroke-width="1.5"/>
+          <rect x="70" y="166" width="340" height="7" rx="2" fill="#1e3a8a" opacity="0.7"/>
+          <rect x="170" y="172" width="140" height="10" rx="3" fill="#08090f"/>
+          <text x="240" y="106" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="24" fill="white">AM</text>
+          <text x="240" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.4)" letter-spacing="5">RENTAL SOLUTIONS</text>
+          <!-- TOTE 2 (middle) -->
+          <rect x="60" y="212" width="360" height="14" rx="4" fill="url(#lidGrad)"/>
+          <rect x="65" y="226" width="350" height="128" rx="2" fill="url(#toteBody)"/>
+          <line x1="130" y1="229" x2="130" y2="350" stroke="#22263a" stroke-width="1.5"/>
+          <line x1="215" y1="229" x2="215" y2="350" stroke="#22263a" stroke-width="1.5"/>
+          <line x1="265" y1="229" x2="265" y2="350" stroke="#22263a" stroke-width="1.5"/>
+          <line x1="350" y1="229" x2="350" y2="350" stroke="#22263a" stroke-width="1.5"/>
+          <rect x="60" y="350" width="360" height="7" rx="2" fill="#1e3a8a" opacity="0.7"/>
+          <rect x="165" y="356" width="150" height="10" rx="3" fill="#08090f"/>
+          <text x="240" y="286" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="24" fill="white">AM</text>
+          <text x="240" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.4)" letter-spacing="5">RENTAL SOLUTIONS</text>
+          <!-- TOTE 3 (bottom) -->
+          <rect x="48" y="396" width="384" height="14" rx="4" fill="url(#lidGrad)"/>
+          <rect x="53" y="410" width="374" height="138" rx="2" fill="url(#toteBody)"/>
+          <line x1="120" y1="413" x2="120" y2="544" stroke="#22263a" stroke-width="1.5"/>
+          <line x1="210" y1="413" x2="210" y2="544" stroke="#22263a" stroke-width="1.5"/>
+          <line x1="270" y1="413" x2="270" y2="544" stroke="#22263a" stroke-width="1.5"/>
+          <line x1="360" y1="413" x2="360" y2="544" stroke="#22263a" stroke-width="1.5"/>
+          <rect x="48" y="544" width="384" height="7" rx="2" fill="#1e3a8a" opacity="0.7"/>
+          <rect x="165" y="550" width="150" height="12" rx="3" fill="#08090f"/>
+          <text x="240" y="472" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="900" font-size="24" fill="white">AM</text>
+          <text x="240" y="496" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="rgba(255,255,255,0.4)" letter-spacing="5">RENTAL SOLUTIONS</text>
+          <!-- Ground shadow -->
+          <ellipse cx="240" cy="562" rx="180" ry="8" fill="rgba(0,20,80,0.45)"/>
+        </svg>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<div class="trust-strip">
-  <div class="trust-inner">
-    <div class="trust-item"><span class="ti">✓</span> Free Delivery & Pickup</div>
-    <div class="trust-item"><span class="ti">✓</span> No Assembly Required</div>
-    <div class="trust-item"><span class="ti">✓</span> Weatherproof & Stackable</div>
-    <div class="trust-item"><span class="ti">✓</span> 100% Eco-Friendly</div>
-    <div class="trust-item"><span class="ti">✓</span> Inland Empire Local Business</div>
+<!-- FEATURE STRIP -->
+<div class="feature-strip">
+  <div class="feature-grid">
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="12" width="24" height="17" rx="2" stroke="#2563eb" stroke-width="1.6"/>
+          <rect x="3" y="8" width="28" height="5" rx="1.5" stroke="#2563eb" stroke-width="1.6"/>
+          <line x1="13" y1="8" x2="13" y2="5" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="21" y1="8" x2="21" y2="5" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>Heavy-Duty Totes</h3>
+      <p>Stackable &amp; built to last</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="11" width="20" height="14" rx="2" stroke="#2563eb" stroke-width="1.6"/>
+          <path d="M22 15h6l3 6v4h-9V15z" stroke="#2563eb" stroke-width="1.6" stroke-linejoin="round"/>
+          <circle cx="8" cy="27" r="3" stroke="#2563eb" stroke-width="1.6"/>
+          <circle cx="26" cy="27" r="3" stroke="#2563eb" stroke-width="1.6"/>
+        </svg>
+      </div>
+      <h3>Free Delivery</h3>
+      <p>We drop off and pick up</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4h5l4 17h14l3-11H11" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="15" cy="28" r="2.5" stroke="#2563eb" stroke-width="1.6"/>
+          <circle cx="26" cy="28" r="2.5" stroke="#2563eb" stroke-width="1.6"/>
+        </svg>
+      </div>
+      <h3>Moving Dollies</h3>
+      <p>Makes moving heavy items easy</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 28c0 0 4-13 15-15 4.5-1 7-6 7-6s-2 13-11 17" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 28c2-5 7-9 11-11" stroke="#2563eb" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>Eco-Friendly</h3>
+      <p>Reusable totes reduce waste</p>
+    </div>
+  </div>
+  <div class="stars-row">
+    <span class="stars">★★★★★</span>
+    <span>Trusted by hundreds of families across the Inland Empire</span>
   </div>
 </div>
 
