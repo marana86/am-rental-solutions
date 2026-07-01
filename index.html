@@ -342,11 +342,11 @@
     .price-cta.outline:hover { border-color: var(--green-light); color: var(--white); background: transparent; }
     .pricing-note { text-align: center; margin-top: 2rem; font-size: 0.82rem; color: var(--muted); }
 
-    /* ── SERVICE AREA ── */
-    .area-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3rem; }
-    .area-chip { background: var(--dark-card); border: 1px solid var(--border); border-radius: 8px; padding: 0.85rem 1rem; text-align: center; font-size: 0.82rem; font-weight: 600; color: var(--text); transition: border-color var(--transition), color var(--transition); }
-    .area-chip:hover { border-color: var(--green-light); color: var(--white); }
-    .area-chip.primary { border-color: var(--green); color: var(--green-bright); }
+    /* ── SERVICE AREA / CALL MAP ── */
+    .call-map-bar { display: flex; align-items: center; gap: 1.25rem; margin-top: 2.5rem; margin-bottom: 2rem; padding: 1.25rem 1.5rem; background: rgba(37,99,235,0.08); border: 1px solid var(--border); border-radius: 12px; flex-wrap: wrap; }
+    .call-map-bar .phone-badge { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--green); color: var(--white); font-weight: 800; font-size: 1.05rem; padding: 0.65rem 1.35rem; border-radius: 8px; text-decoration: none; transition: background var(--transition); white-space: nowrap; }
+    .call-map-bar .phone-badge:hover { background: var(--green-light); }
+    .call-map-bar p { font-size: 0.84rem; color: var(--muted); line-height: 1.5; margin: 0; }
 
     /* ── REVIEWS ── */
     #reviews { background: var(--dark-mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -433,7 +433,6 @@
       .steps { grid-template-columns: repeat(2, 1fr); }
       .compare-grid { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
-      .area-grid { grid-template-columns: repeat(3, 1fr); }
       .reviews-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .blog-teaser-grid { grid-template-columns: 1fr 1fr !important; }
@@ -467,8 +466,8 @@
       .form-row { grid-template-columns: 1fr; }
       .quote-form-card .form-row { grid-template-columns: 1fr; }
 
-      /* Service area */
-      .area-grid { grid-template-columns: repeat(2, 1fr); }
+      /* Service area map */
+      #area iframe { height: 320px; }
 
       /* Blog teaser */
       .blog-teaser-grid { grid-template-columns: 1fr !important; }
@@ -798,32 +797,30 @@
   </div>
 </section>
 
-<!-- SERVICE AREA -->
+<!-- SERVICE AREA / CALL MAP -->
 <section id="area">
   <div class="section-inner">
     <div>
       <div class="eyebrow">Where We Serve</div>
-      <h2 class="section-title">Inland Empire Service Area</h2>
-      <p class="section-sub">We deliver throughout the Inland Empire and surrounding communities. Don't see your city? Give us a call — we'll do our best to accommodate.</p>
+      <h2 class="section-title">Tap Your City — We'll Pick Up</h2>
+      <p class="section-sub">We deliver throughout the Inland Empire. Tap any city below to call us directly and confirm availability for your move date.</p>
     </div>
-    <div class="area-grid">
-      <div class="area-chip primary">Rancho Cucamonga</div>
-      <div class="area-chip primary">Ontario</div>
-      <div class="area-chip primary">Fontana</div>
-      <div class="area-chip primary">Upland</div>
-      <div class="area-chip">Alta Loma</div>
-      <div class="area-chip">Chino</div>
-      <div class="area-chip">Chino Hills</div>
-      <div class="area-chip">Claremont</div>
-      <div class="area-chip">Montclair</div>
-      <div class="area-chip">La Verne</div>
-      <div class="area-chip">San Dimas</div>
-      <div class="area-chip">Glendora</div>
-      <div class="area-chip">Pomona</div>
-      <div class="area-chip">Rialto</div>
-      <div class="area-chip">Colton</div>
-      <div class="area-chip">Redlands</div>
+
+    <!-- CALL BAR -->
+    <div class="call-map-bar">
+      <a href="tel:+19098378058" class="phone-badge">📞 (909) 837-8058</a>
+      <p>Call or text us directly — 7 days a week, 7 AM–8 PM. We'll confirm availability and lock in your delivery date on the spot.</p>
     </div>
+
+    <!-- GOOGLE MAP EMBED -->
+    <div style="border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 32px rgba(0,0,0,0.4);">
+      <iframe
+        src="https://maps.google.com/maps?q=Inland+Empire,+CA&t=m&z=10&ie=UTF8&iwloc=&output=embed"
+        width="100%" height="460" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+        title="A&M Rental Solutions service area — Inland Empire, CA">
+      </iframe>
+    </div>
+    <p style="font-size:0.78rem;color:var(--muted);margin-top:0.85rem;text-align:center;">Serving Rancho Cucamonga · Ontario · Fontana · Upland · Alta Loma · Chino · Chino Hills · Claremont · Montclair · La Verne · San Dimas · Glendora · Pomona · Rialto · Colton · Redlands</p>
 
     <!-- OUT OF AREA CALLOUT -->
     <div class="out-of-area-callout" style="margin-top:2.5rem;background:linear-gradient(135deg,rgba(37,99,235,0.12) 0%,rgba(37,99,235,0.04) 100%);border:1px solid var(--green);border-radius:14px;padding:2rem 2.25rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
@@ -832,7 +829,7 @@
         <div style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--white);margin-bottom:0.4rem;">Not in a Listed City? We Can Still Deliver.</div>
         <p style="font-size:0.86rem;color:var(--muted);line-height:1.7;margin:0;">We offer extended delivery outside our standard service area for an additional fee. Just let us know your city when you request a quote and we'll confirm availability and a custom delivery rate — no obligation.</p>
       </div>
-      <a href="#quick-quote" style="flex-shrink:0;display:inline-block;background:var(--green);color:var(--white);font-weight:700;font-size:0.85rem;padding:0.8rem 1.5rem;border-radius:var(--radius);text-decoration:none;white-space:nowrap;transition:background 0.25s ease;" onmouseover="this.style.background='#3da06a'" onmouseout="this.style.background='#2e7d52'">Request Extended Delivery</a>
+      <a href="tel:+19098378058" style="flex-shrink:0;display:inline-block;background:var(--green);color:var(--white);font-weight:700;font-size:0.85rem;padding:0.8rem 1.5rem;border-radius:var(--radius);text-decoration:none;white-space:nowrap;transition:background var(--transition);" onmouseover="this.style.background='var(--green-light)'" onmouseout="this.style.background='var(--green)'">📞 Call for Custom Quote</a>
     </div>
 
   </div>
