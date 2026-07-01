@@ -802,8 +802,8 @@
   <div class="section-inner">
     <div>
       <div class="eyebrow">Where We Serve</div>
-      <h2 class="section-title">Tap Your City — We'll Pick Up</h2>
-      <p class="section-sub">We deliver throughout the Inland Empire. Tap any city below to call us directly and confirm availability for your move date.</p>
+      <h2 class="section-title">From Pasadena to Redlands — We Deliver</h2>
+      <p class="section-sub">We cover the full Inland Empire. Every city on the map below is in our standard delivery zone — no extra charge.</p>
     </div>
 
     <!-- CALL BAR -->
@@ -812,15 +812,142 @@
       <p>Call or text us directly — 7 days a week, 7 AM–8 PM. We'll confirm availability and lock in your delivery date on the spot.</p>
     </div>
 
-    <!-- GOOGLE MAP EMBED -->
-    <div style="border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 4px 32px rgba(0,0,0,0.4);">
-      <iframe
-        src="https://maps.google.com/maps?q=Inland+Empire,+CA&t=m&z=10&ie=UTF8&iwloc=&output=embed"
-        width="100%" height="460" style="border:0;display:block;" allowfullscreen="" loading="lazy"
-        title="A&M Rental Solutions service area — Inland Empire, CA">
-      </iframe>
+    <!-- CUSTOM SVG SERVICE AREA MAP -->
+    <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(37,99,235,0.3);box-shadow:0 4px 32px rgba(0,0,0,0.5);">
+      <svg viewBox="0 0 960 420" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;background:#080b18;" aria-label="A&M Rental Solutions service area map — Inland Empire, CA">
+        <defs>
+          <linearGradient id="mapBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#080b18"/>
+            <stop offset="100%" stop-color="#0c1022"/>
+          </linearGradient>
+          <filter id="dot-glow" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="3.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <pattern id="dotGrid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+            <circle cx="15" cy="15" r="0.9" fill="rgba(255,255,255,0.055)"/>
+          </pattern>
+        </defs>
+
+        <!-- Background -->
+        <rect width="960" height="420" fill="url(#mapBg)"/>
+        <rect width="960" height="420" fill="url(#dotGrid)"/>
+
+        <!-- Mountain silhouette — San Gabriel Mts -->
+        <path d="M 0,95 L 45,68 L 100,48 L 160,62 L 225,38 L 295,54 L 355,32 L 415,50 L 460,22 L 520,44 L 575,18 L 635,36 L 695,26 L 755,43 L 820,33 L 885,49 L 930,35 L 960,44 L 960,0 L 0,0 Z"
+          fill="rgba(15,25,55,0.6)"/>
+        <text x="480" y="20" fill="rgba(148,163,184,0.35)" font-size="8.5" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="3.5">SAN GABRIEL MOUNTAINS</text>
+
+        <!-- Service area dashed boundary -->
+        <polygon points="69,143 303,160 353,200 387,209 429,214 490,214 531,176 538,202 673,221 729,202 890,273 777,246 455,332 420,358 403,273 69,143"
+          fill="rgba(37,99,235,0.055)" stroke="rgba(37,99,235,0.22)" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+        <!-- ── ROADS ── -->
+        <!-- I-210 Foothill Freeway (primary route) -->
+        <path d="M 69,143 C 175,150 245,155 303,160 L 353,200 L 387,209 L 429,214 L 490,214 L 531,176 L 538,202 L 673,221 L 729,202"
+          stroke="#1e3a8a" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="174" y="146" width="34" height="14" rx="3" fill="#1e40af"/>
+        <text x="191" y="157" fill="#fff" font-size="7.5" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">I-210</text>
+
+        <!-- I-10 San Bernardino Freeway -->
+        <path d="M 403,273 L 491,262 L 673,221 L 777,246 L 890,273"
+          stroke="#1e3a8a" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="588" y="244" width="30" height="14" rx="3" fill="#1e40af"/>
+        <text x="603" y="255" fill="#fff" font-size="7.5" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">I-10</text>
+
+        <!-- I-15 (N-S connector) -->
+        <path d="M 538,202 L 491,262 L 455,332 L 420,358"
+          stroke="#374151" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <rect x="463" y="284" width="30" height="14" rx="3" fill="#374151"/>
+        <text x="478" y="295" fill="rgba(255,255,255,0.7)" font-size="7.5" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">I-15</text>
+
+        <!-- Local connector (La Verne → Pomona → Chino Hills) -->
+        <path d="M 387,209 L 403,273 L 420,358"
+          stroke="#2d3a50" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+        <!-- Rialto → Colton → Redlands on I-10 -->
+        <path d="M 729,202 L 777,246 L 890,273"
+          stroke="#1e3a8a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+        <!-- ── CITY MARKERS & LABELS ── -->
+
+        <!-- Pasadena -->
+        <circle cx="69" cy="143" r="5.5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5" filter="url(#dot-glow)"/>
+        <text x="79" y="140" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• Pasadena</text>
+
+        <!-- Glendora -->
+        <circle cx="303" cy="160" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="311" y="157" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• Glendora</text>
+
+        <!-- San Dimas -->
+        <circle cx="353" cy="200" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="297" y="196" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• San Dimas</text>
+
+        <!-- La Verne -->
+        <circle cx="387" cy="209" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="393" y="224" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• La Verne</text>
+
+        <!-- Claremont (label left) -->
+        <circle cx="429" cy="214" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="424" y="207" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600" text-anchor="end">Claremont •</text>
+
+        <!-- Upland -->
+        <circle cx="490" cy="214" r="5.5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="496" y="210" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• Upland</text>
+
+        <!-- Montclair -->
+        <circle cx="455" cy="248" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="461" y="258" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• Montclair</text>
+
+        <!-- Pomona (label left) -->
+        <circle cx="403" cy="273" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="397" y="269" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600" text-anchor="end">Pomona •</text>
+
+        <!-- Ontario -->
+        <circle cx="491" cy="262" r="6" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="497" y="277" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• Ontario</text>
+
+        <!-- Alta Loma -->
+        <circle cx="531" cy="176" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="537" y="170" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• Alta Loma</text>
+
+        <!-- Rancho Cucamonga — PRIMARY (larger glow) -->
+        <circle cx="538" cy="202" r="9" fill="#2563eb" stroke="#60a5fa" stroke-width="2.5" filter="url(#dot-glow)"/>
+        <text x="550" y="198" fill="#ffffff" font-size="12" font-family="Inter,sans-serif" font-weight="800">• Rancho Cucamonga</text>
+
+        <!-- Fontana -->
+        <circle cx="673" cy="221" r="6.5" fill="#2563eb" stroke="#60a5fa" stroke-width="1.5"/>
+        <text x="682" y="216" fill="#f0f9ff" font-size="11" font-family="Inter,sans-serif" font-weight="700">• Fontana</text>
+
+        <!-- Rialto -->
+        <circle cx="729" cy="202" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="735" y="196" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• Rialto</text>
+
+        <!-- Colton -->
+        <circle cx="777" cy="246" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="783" y="241" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• Colton</text>
+
+        <!-- Redlands (label left — near right edge) -->
+        <circle cx="890" cy="273" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="884" y="268" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600" text-anchor="end">Redlands •</text>
+
+        <!-- Chino -->
+        <circle cx="455" cy="332" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="461" y="328" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• Chino</text>
+
+        <!-- Chino Hills -->
+        <circle cx="420" cy="358" r="5" fill="#2563eb" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="426" y="371" fill="#e2e8f0" font-size="11" font-family="Inter,sans-serif" font-weight="600">• Chino Hills</text>
+
+        <!-- Map footer -->
+        <text x="20" y="413" fill="rgba(96,165,250,0.32)" font-size="8" font-family="Inter,sans-serif" letter-spacing="1.5">A&amp;M RENTAL SOLUTIONS · INLAND EMPIRE SERVICE AREA · (909) 837-8058</text>
+
+        <!-- North arrow -->
+        <text x="930" y="80" fill="rgba(148,163,184,0.45)" font-size="9.5" font-family="Inter,sans-serif" text-anchor="middle" font-weight="700">N</text>
+        <polygon points="930,86 927,98 930,95 933,98" fill="rgba(148,163,184,0.4)"/>
+        <line x1="930" y1="98" x2="930" y2="108" stroke="rgba(148,163,184,0.3)" stroke-width="1.5"/>
+      </svg>
     </div>
-    <p style="font-size:0.78rem;color:var(--muted);margin-top:0.85rem;text-align:center;">Serving Rancho Cucamonga · Ontario · Fontana · Upland · Alta Loma · Chino · Chino Hills · Claremont · Montclair · La Verne · San Dimas · Glendora · Pomona · Rialto · Colton · Redlands</p>
 
     <!-- OUT OF AREA CALLOUT -->
     <div class="out-of-area-callout" style="margin-top:2.5rem;background:linear-gradient(135deg,rgba(37,99,235,0.12) 0%,rgba(37,99,235,0.04) 100%);border:1px solid var(--green);border-radius:14px;padding:2rem 2.25rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
